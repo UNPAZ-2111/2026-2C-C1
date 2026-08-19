@@ -1,0 +1,16 @@
+@startuml
+class Program {
+    - {static} Main(args:string[]) : void
+}
+
+class Auto {
+    - capacidadTanque : int
+    - nivelCombustible : int
+    + CargarCombustible (cantidad : int) : void
+    + Circular (distancia : int) : bool    
+    + Mostrar() : void
+}
+
+Program ..> Auto
+@enduml
+
