@@ -1,23 +1,28 @@
 ﻿// Controlador
-// Repasito interpolación de cadenas de caracteres
-//Console.WriteLine($"1+1={1+1}");
+class Program
+{
+    void Main(string[] args)
+    {
+        // Repasito interpolación de cadenas de caracteres
+        //Console.WriteLine($"1+1={1+1}");
 
-// Definimos una variable para referir al objeto
-//Auto duna;
-// creamos (construimos) un objeto de esa clase
-//duna = new Auto();
+        // Definimos una variable para referir al objeto
+        //Auto duna;
+        // creamos (construimos) un objeto de esa clase
+        //duna = new Auto();
 
-// todo de una vez
-Auto duna = new Auto();
+        // todo de una vez
+        Auto duna = new Auto();
 
-// Podemos invocar comportamientos (enviando mensajes)
+        // Podemos invocar comportamientos (enviando mensajes)
 
-duna.Mostrar();
-Console.WriteLine($"{duna.Circular(10)}");
-duna.CargarCombustible(90);
-Console.WriteLine($"{duna.Circular(10)}");
-duna.Mostrar();
-
+        duna.Mostrar();
+        Console.WriteLine($"{duna.Circular(10)}");
+        duna.CargarCombustible(90);
+        Console.WriteLine($"{duna.Circular(10)}");
+        duna.Mostrar();
+    }
+}
 
 // Modelo
 // Definimos y declaramos las clases
