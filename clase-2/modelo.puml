@@ -1,0 +1,37 @@
+@startuml
+class Program {
+    - {static} Main(args:string[]) : void
+}
+
+class Goblin {
+    - vida : int
+    - energia : int
+    - color : ConsoleColor
+    + Goblin ()
+    + Goblin (color : ConsoleColor)
+    + Goblin (vida : int, energia : int, color : ConsoleColor)
+    + setVida (vida : int) : void
+    + setEnergia (energia : int) : void
+    + TomarPocion (unaPocion : Pocion) : void    
+    + Mostrar() : void
+}
+
+class Pocion {
+    - poder : int
+    - color : ConsoleColor
+    - activa : bool
+    + Pocion () 
+    + Pocion (poder : int, color : ConsoleColor)
+    + getPoder() : int
+    + getColor() : ConsoleColor
+    - Activar() : void
+    + Desactivar() : void
+    + AportarPoder() : int
+    + Mostrar() : void
+}
+
+Program ..> Goblin
+Program ..> Pocion
+Goblin - Pocion
+@enduml
+
