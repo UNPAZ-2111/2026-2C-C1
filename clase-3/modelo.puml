@@ -1,0 +1,32 @@
+@startuml
+class Program {
+    - {static} Main(args:string[]) : void
+}
+
+class Hormiga {
+    - puntosEnergia : int
+    - puntosFelicidad : int
+    - miHoja : Hoja
+    + Hormiga(puntosEnergia : int, puntosFelicidad : int)
+    + AgarrarHoja(unaHoja : Hoja) : void
+    + SoltarHoja() : void
+    + ComerHoja() : void
+    + RecibirEnergia(puntosEnergia : int)
+    + EntregarHoja() : Hoja    
+    + Mostrar() : void
+}
+
+class Hoja {
+    - valorEnergetico : int
+    - porciones : int
+    + Hoja(valorEnergetico : int, porciones : int)
+    + getValorEnergetico() : int
+    + serComida(unaHormiga : Hormiga) : void
+    + Mostrar() : void
+}
+
+Program ..> Hormiga
+Program ..> Hoja
+Hormiga o- Hoja
+@enduml
+
