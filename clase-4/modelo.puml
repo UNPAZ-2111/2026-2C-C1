@@ -1,0 +1,45 @@
+@startuml
+class Program {
+    - {static} Main(args:string[]) : void
+}
+
+abstract class Personaje {
+    # x : int
+    # y : int
+    - apariencia : char
+    - objetivo : Personaje
+    
+    + Personaje(apariencia : char)
+    + getx() : int
+    + gety() : int
+    + getapariencia() : char
+    + irA(x : int, y : int) : void
+    + Perseguir() : void
+    + <<virtual>> Atacar() : void
+    + <<virtual>> RecibirAtaque(atacante : Personaje) : void
+}
+
+class Zombie {
+   + Zombie()  
+   + <<override>> Atacar() : void
+   + <<override>> RecibirAtaque(atacante : Personaje) : void
+}
+
+class Esqueleto {
+   + Esqueleto()  
+   + <<override>> Atacar() : void
+   + <<override>> RecibirAtaque(atacante : Personaje) : void
+}
+
+class Jugador {
+   + Jugador()
+   + Mover() : void
+}
+
+Program ..> Personaje
+Program ..> Random
+Personaje <|-- Jugador
+Personaje <|-- Zombie
+Personaje <|-- Esqueleto
+Personaje - Personaje 
+@enduml
